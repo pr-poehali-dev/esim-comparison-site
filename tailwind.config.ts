@@ -113,8 +113,8 @@ export default {
 				'scale-in': 'scale-in 0.3s ease-out'
 			},
 			fontFamily: {
-				sans: ['Raleway', 'sans-serif'],
-				serif: ['Playfair Display', 'serif']
+				sans: ['Inter', 'sans-serif'],
+				display: ['Space Grotesk', 'sans-serif']
 			}
 		}
 	},
