@@ -7,103 +7,18 @@ import RelatedLinks from "@/components/RelatedLinks";
 import Icon from "@/components/ui/icon";
 
 const Compare = () => {
-  const { slug } = useParams();
-
-  const getComparison = () => {
-    if (!slug) {
-      return {
-        title: "Сравнение всех eSIM адаптеров",
-        description: "Полное сравнение всех доступных адаптеров для выбора лучшего варианта",
-        adapters: adaptersData
-      };
-    }
-
-    const comparisons: Record<string, { title: string; description: string; slugs: string[] }> = {
-      "premium": {
-        title: "Премиум адаптеры",
-        description: "Сравнение лучших премиум решений с максимальным покрытием",
-        slugs: ["switch-esim", "fiveber"]
-      },
-      "budget": {
-        title: "Бюджетные адаптеры",
-        description: "Сравнение самых доступных вариантов для экономных путешественников",
-        slugs: ["nine-esim", "esim-me"]
-      },
-      "business": {
-        title: "Для бизнеса",
-        description: "Сравнение решений для корпоративных клиентов и предпринимателей",
-        slugs: ["unisimka", "switch-esim"]
-      },
-      "popular": {
-        title: "Самые популярные",
-        description: "Сравнение топовых адаптеров по версии пользователей",
-        slugs: ["switch-esim", "esim-me", "fiveber"]
-      }
-    };
-
-    const comparison = comparisons[slug];
-    if (!comparison) {
-      return null;
-    }
-
-    return {
-      ...comparison,
-      adapters: adaptersData.filter(a => comparison.slugs.includes(a.slug))
-    };
+  const comparison = {
+    title: "Сравнение всех eSIM адаптеров",
+    description: "Полное сравнение всех доступных адаптеров для выбора лучшего варианта",
+    adapters: adaptersData
   };
 
-  const comparison = getComparison();
+  const seoTitle = "Сравнение всех eSIM адаптеров 2025 - детальная таблица";
+  const seoDescription = "Подробное сравнение 6 популярных eSIM провайдеров: тарифы, покрытие, поддержка, функции. Выберите лучший вариант для путешествий.";
 
-  if (!comparison) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <SEO 
-          title="Сравнение не найдено"
-          description="Запрошенная страница сравнения не найдена"
-          canonical="/compare"
-        />
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Сравнение не найдено</h1>
-          <Link to="/" className="text-primary hover:underline">
-            Вернуться на главную
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const seoTitles: Record<string, string> = {
-    "premium": "Сравнение премиум eSIM адаптеров - Switch eSIM vs 5ber",
-    "budget": "Сравнение бюджетных eSIM - 9eSIM vs eSIM.me",
-    "business": "eSIM для бизнеса - сравнение Unisimka и Switch eSIM",
-    "popular": "Топ-3 популярных eSIM адаптера 2025"
-  };
-
-  const seoDescriptions: Record<string, string> = {
-    "premium": "Детальное сравнение премиум провайдеров eSIM: Switch eSIM и 5ber. Покрытие 190+ и 100+ стран, круглосуточная VIP поддержка, высокие скорости.",
-    "budget": "Сравнение доступных eSIM: 9eSIM от $3.50 и eSIM.me от $4.00. Честные цены, без скрытых платежей, покрытие 150+ и 170+ стран.",
-    "business": "Корпоративные решения eSIM: Unisimka с API интеграцией и Switch eSIM с широким покрытием. Идеально для бизнеса и команд.",
-    "popular": "Топ-3 самых популярных eSIM адаптера среди путешественников 2025: Switch eSIM, eSIM.me, 5ber. Сравнение характеристик и цен."
-  };
-
-  const seoTitle = slug && seoTitles[slug] ? seoTitles[slug] : comparison.title;
-  const seoDescription = slug && seoDescriptions[slug] ? seoDescriptions[slug] : comparison.description;
-
-  const categoryNames: Record<string, string> = {
-    "premium": "Премиум адаптеры",
-    "budget": "Бюджетные адаптеры",
-    "business": "Для бизнеса",
-    "popular": "Популярные"
-  };
-
-  const breadcrumbItems = slug 
-    ? [
-        { name: "Сравнение", url: "/compare" },
-        { name: categoryNames[slug] || comparison.title, url: `/compare/${slug}` }
-      ]
-    : [
-        { name: "Сравнение всех адаптеров", url: "/compare" }
-      ];
+  const breadcrumbItems = [
+    { name: "Сравнение всех адаптеров", url: "/compare" }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -111,7 +26,7 @@ const Compare = () => {
         title={seoTitle}
         description={seoDescription}
         keywords="сравнение esim, лучшие esim, esim для путешествий, премиум esim, бюджетный esim, esim для бизнеса"
-        canonical={slug ? `/compare/${slug}` : "/compare"}
+        canonical="/compare"
       />
       <div className="container mx-auto px-4 py-12">
         <Breadcrumbs items={breadcrumbItems} />
@@ -196,39 +111,39 @@ const Compare = () => {
               gradient: "from-blue-500 to-cyan-500"
             },
             {
-              title: "Премиум адаптеры",
-              description: "Сравнение лучших премиум решений",
-              url: "/compare/premium",
-              icon: "Crown",
+              title: "Обзоры",
+              description: "Читайте подробные обзоры каждого провайдера",
+              url: "/reviews",
+              icon: "BookOpen",
               gradient: "from-purple-500 to-pink-500"
-            },
-            {
-              title: "Бюджетные",
-              description: "Доступные варианты для экономии",
-              url: "/compare/budget",
-              icon: "DollarSign",
-              gradient: "from-green-500 to-emerald-500"
-            },
-            {
-              title: "Для бизнеса",
-              description: "Корпоративные решения с API",
-              url: "/compare/business",
-              icon: "Briefcase",
-              gradient: "from-orange-500 to-red-500"
-            },
-            {
-              title: "Популярные",
-              description: "Топ выбор путешественников",
-              url: "/compare/popular",
-              icon: "TrendingUp",
-              gradient: "from-teal-500 to-blue-500"
             },
             {
               title: "Switch eSIM",
               description: "Лидер рынка с 190+ странами",
               url: "/adapter/switch-esim",
               icon: "Wifi",
-              gradient: "from-blue-500 to-cyan-500"
+              gradient: "from-teal-500 to-cyan-500"
+            },
+            {
+              title: "9eSIM",
+              description: "Самые доступные цены для путешествий",
+              url: "/adapter/nine-esim",
+              icon: "DollarSign",
+              gradient: "from-green-500 to-emerald-500"
+            },
+            {
+              title: "5ber",
+              description: "Премиум качество с VIP поддержкой",
+              url: "/adapter/fiveber",
+              icon: "Crown",
+              gradient: "from-orange-500 to-red-500"
+            },
+            {
+              title: "Unisimka",
+              description: "Корпоративные решения с API",
+              url: "/adapter/unisimka",
+              icon: "Briefcase",
+              gradient: "from-indigo-500 to-purple-500"
             }
           ]}
         />

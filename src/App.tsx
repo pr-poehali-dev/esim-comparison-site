@@ -35,7 +35,6 @@ const App = () => (
             <Route path="/adapter/esim-me" element={<EsimMe />} />
             <Route path="/adapter/xesim" element={<Xesim />} />
             <Route path="/compare" element={<Compare />} />
-            <Route path="/compare/:slug" element={<Compare />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

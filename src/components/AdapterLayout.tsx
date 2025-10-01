@@ -362,17 +362,17 @@ const AdapterLayout = ({
                   gradient: "from-blue-500 to-cyan-500"
                 },
                 {
-                  title: "Премиум адаптеры",
-                  description: "Сравнение лучших премиум решений с VIP сервисом",
-                  url: "/compare/premium",
-                  icon: "Crown",
+                  title: "Все обзоры",
+                  description: "Читайте подробные обзоры всех провайдеров",
+                  url: "/reviews",
+                  icon: "BookOpen",
                   gradient: "from-purple-500 to-pink-500"
                 },
                 {
-                  title: "Бюджетные варианты",
-                  description: "Доступные решения для экономных путешественников",
-                  url: "/compare/budget",
-                  icon: "DollarSign",
+                  title: "Сравнение всех",
+                  description: "Сравните всех провайдеров в одной таблице",
+                  url: "/compare",
+                  icon: "ArrowLeftRight",
                   gradient: "from-green-500 to-emerald-500"
                 }
               ]}

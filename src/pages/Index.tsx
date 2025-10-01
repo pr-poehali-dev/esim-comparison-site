@@ -301,46 +301,6 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="comparison" className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl md:text-5xl font-display font-bold mb-4">
-                Сравнительные статьи
-              </h3>
-              <p className="text-muted-foreground text-lg">
-                Детальное сопоставление провайдеров по различным критериям
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { title: "Премиум адаптеры", desc: "Сравнение лучших премиум решений", gradient: "from-blue-500 to-cyan-500", slug: "premium" },
-                { title: "Бюджетные варианты", desc: "Доступные решения для экономных", gradient: "from-green-500 to-emerald-500", slug: "budget" },
-                { title: "Для бизнеса", desc: "Корпоративные решения и API", gradient: "from-purple-500 to-pink-500", slug: "business" },
-                { title: "Самые популярные", desc: "Топ выбор путешественников 2025", gradient: "from-orange-500 to-red-500", slug: "popular" }
-              ].map((article, idx) => (
-                <Link key={idx} to={`/compare/${article.slug}`}>
-                  <Card className="group gradient-card border-2 border-border/50 hover:border-teal-600/50 transition-all cursor-pointer overflow-hidden">
-                    <div className={`h-2 bg-gradient-to-r ${article.gradient}`}></div>
-                    <CardHeader>
-                      <CardTitle className="text-xl font-display">{article.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground">{article.desc}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <Button variant="outline" className="w-full border-border/50 hover:bg-muted/50 group-hover:border-teal-600/50 transition-all">
-                        Посмотреть сравнение
-                        <Icon name="ArrowRight" className="ml-2" size={16} />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <footer className="py-16 border-t border-border/50 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
