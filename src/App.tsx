@@ -28,6 +28,7 @@ const App = () => (
             <Route path="/adapter/switch-esim" element={<SwitchEsim />} />
             <Route path="/adapter/unisimka" element={<Unisimka />} />
             <Route path="/adapter/nine-esim" element={<NineEsim />} />
+            <Route path="/adapter/9esim" element={<NineEsim />} />
             <Route path="/adapter/fiveber" element={<Fiveber />} />
             <Route path="/adapter/5ber" element={<Fiveber />} />
             <Route path="/adapter/esim-me" element={<EsimMe />} />
