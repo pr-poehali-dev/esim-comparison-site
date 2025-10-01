@@ -97,19 +97,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 via-background to-background"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-50 via-background to-background"></div>
       
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pink-50 rounded-full blur-[120px]"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-50 rounded-full blur-[120px]"></div>
 
       <header className="border-b border-border/50 sticky top-0 bg-background/80 backdrop-blur-xl z-50 relative">
         <div className="container mx-auto px-4 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-pink-500 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
                 <Icon name="Wifi" size={20} className="text-white" />
               </div>
-              <h1 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
+              <h1 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent">
                 eSIM Адаптеры
               </h1>
             </div>
@@ -137,14 +137,14 @@ const Index = () => {
             </div>
             
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
-              Лучшие <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">eSIM</span> адаптеры
+              Лучшие <span className="bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent">eSIM</span> адаптеры
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Сравните 6 популярных провайдеров eSIM и выберите идеальный вариант для ваших путешествий
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center mb-16">
-              <Button size="lg" className="gradient-primary text-white border-0 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all">
+              <Button size="lg" className="gradient-primary text-white border-0 shadow-lg shadow-teal-500/30 hover:shadow-teal-600/50 transition-all">
                 <Icon name="Compass" className="mr-2" size={20} />
                 Сравнить все
               </Button>
@@ -155,25 +155,25 @@ const Index = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent mb-2">
                   6
                 </div>
                 <div className="text-sm text-muted-foreground">Провайдеров</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent mb-2">
                   190+
                 </div>
                 <div className="text-sm text-muted-foreground">Стран</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent mb-2">
                   24/7
                 </div>
                 <div className="text-sm text-muted-foreground">Поддержка</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-cyan-500 to-teal-600 bg-clip-text text-transparent mb-2">
                   $3.50
                 </div>
                 <div className="text-sm text-muted-foreground">От цены</div>
@@ -200,8 +200,8 @@ const Index = () => {
                 key={adapter.id}
                 className={`group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer gradient-card ${
                   selectedAdapter === adapter.id 
-                    ? 'border-blue-500 shadow-lg shadow-blue-500/20' 
-                    : 'border-border/50 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10'
+                    ? 'border-teal-600 shadow-lg shadow-teal-500/20' 
+                    : 'border-border/50 hover:border-teal-600/50 hover:shadow-lg hover:shadow-teal-500/10'
                 }`}
                 onClick={() => setSelectedAdapter(adapter.id)}
               >
@@ -299,14 +299,14 @@ const Index = () => {
                 { title: "5ber vs xeSIM", desc: "Технологии и инновации", gradient: "from-orange-500 to-red-500" },
                 { title: "Топ-3 для путешествий", desc: "Лучший выбор туристов 2025", gradient: "from-green-500 to-emerald-500" }
               ].map((article, idx) => (
-                <Card key={idx} className="group gradient-card border-2 border-border/50 hover:border-blue-500/50 transition-all cursor-pointer overflow-hidden">
+                <Card key={idx} className="group gradient-card border-2 border-border/50 hover:border-teal-600/50 transition-all cursor-pointer overflow-hidden">
                   <div className={`h-2 bg-gradient-to-r ${article.gradient}`}></div>
                   <CardHeader>
                     <CardTitle className="text-xl font-display">{article.title}</CardTitle>
                     <CardDescription className="text-muted-foreground">{article.desc}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Button variant="outline" className="w-full border-border/50 hover:bg-muted/50 group-hover:border-blue-500/50 transition-all">
+                    <Button variant="outline" className="w-full border-border/50 hover:bg-muted/50 group-hover:border-teal-600/50 transition-all">
                       Читать статью
                       <Icon name="ArrowRight" className="ml-2" size={16} />
                     </Button>
@@ -323,7 +323,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-pink-500 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
                   <Icon name="Wifi" size={20} className="text-white" />
                 </div>
                 <h4 className="text-xl font-display font-bold">eSIM Адаптеры</h4>
