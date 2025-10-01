@@ -121,16 +121,22 @@ const Index = () => {
                 eSIM Адаптеры
               </h1>
             </div>
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-4">
               <a href="#adapters" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Адаптеры
               </a>
-              <a href="#comparison" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Сравнение
-              </a>
-              <a href="#guides" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Руководства
-              </a>
+              <Link to="/reviews">
+                <Button variant="outline" size="sm" className="border-border/50">
+                  <Icon name="BookOpen" className="mr-2" size={16} />
+                  Обзоры
+                </Button>
+              </Link>
+              <Link to="/compare">
+                <Button variant="outline" size="sm" className="border-border/50">
+                  <Icon name="ArrowLeftRight" className="mr-2" size={16} />
+                  Сравнить
+                </Button>
+              </Link>
             </nav>
           </div>
         </div>

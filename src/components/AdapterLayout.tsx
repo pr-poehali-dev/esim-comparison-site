@@ -59,12 +59,20 @@ const AdapterLayout = ({
               </div>
               <span className="text-xl font-display font-bold">eSIM Адаптеры</span>
             </Link>
-            <Link to="/compare">
-              <Button variant="outline" size="sm" className="border-border/50">
-                <Icon name="ArrowLeftRight" className="mr-2" size={16} />
-                Сравнить
-              </Button>
-            </Link>
+            <div className="flex gap-2">
+              <Link to="/reviews">
+                <Button variant="outline" size="sm" className="border-border/50">
+                  <Icon name="BookOpen" className="mr-2" size={16} />
+                  Обзоры
+                </Button>
+              </Link>
+              <Link to="/compare">
+                <Button variant="outline" size="sm" className="border-border/50">
+                  <Icon name="ArrowLeftRight" className="mr-2" size={16} />
+                  Сравнить
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

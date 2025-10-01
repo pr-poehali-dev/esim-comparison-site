@@ -12,6 +12,7 @@ import Fiveber from "./pages/Fiveber";
 import EsimMe from "./pages/EsimMe";
 import Xesim from "./pages/Xesim";
 import Compare from "./pages/Compare";
+import Reviews from "./pages/Reviews";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/adapter/xesim" element={<Xesim />} />
             <Route path="/compare" element={<Compare />} />
             <Route path="/compare/:slug" element={<Compare />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
