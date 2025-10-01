@@ -221,6 +221,70 @@ const AdapterLayout = ({
         </div>
       </section>
 
+      {/* Заготовка под статью-обзор */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <article className="prose prose-lg max-w-none">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                Обзор {shortName}: подробный гайд для путешественников
+              </h2>
+              
+              <div className="space-y-8 text-muted-foreground">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Что такое {shortName}</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет текст о том, что представляет собой {shortName}, его история, позиционирование на рынке]
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Как работает {shortName}</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет описание принципа работы сервиса, процесса покупки и активации eSIM]
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Кому подойдёт {shortName}</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет описание целевой аудитории: кому больше всего подходит этот сервис]
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Тарифы и цены {shortName}</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет подробный разбор тарифных планов, сравнение цен с конкурентами]
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Покрытие и качество связи</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет информация о географии покрытия, партнёрских операторах, качестве связи]
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Поддержка клиентов</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет описание службы поддержки, каналов связи, времени ответа]
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Наш вердикт</h3>
+                  <p className="leading-relaxed">
+                    [Здесь будет итоговая оценка сервиса, рекомендации по использованию]
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
