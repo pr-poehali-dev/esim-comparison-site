@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { adaptersData } from "@/data/adapters";
 import ComparisonTable from "@/components/ComparisonTable";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedLinks from "@/components/RelatedLinks";
 import Icon from "@/components/ui/icon";
 
 const Compare = () => {
@@ -87,6 +89,22 @@ const Compare = () => {
   const seoTitle = slug && seoTitles[slug] ? seoTitles[slug] : comparison.title;
   const seoDescription = slug && seoDescriptions[slug] ? seoDescriptions[slug] : comparison.description;
 
+  const categoryNames: Record<string, string> = {
+    "premium": "Премиум адаптеры",
+    "budget": "Бюджетные адаптеры",
+    "business": "Для бизнеса",
+    "popular": "Популярные"
+  };
+
+  const breadcrumbItems = slug 
+    ? [
+        { name: "Сравнение", url: "/compare" },
+        { name: categoryNames[slug] || comparison.title, url: `/compare/${slug}` }
+      ]
+    : [
+        { name: "Сравнение всех адаптеров", url: "/compare" }
+      ];
+
   return (
     <div className="min-h-screen bg-background">
       <SEO 
@@ -96,13 +114,7 @@ const Compare = () => {
         canonical={slug ? `/compare/${slug}` : "/compare"}
       />
       <div className="container mx-auto px-4 py-12">
-        <Link 
-          to="/"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-        >
-          <Icon name="ArrowLeft" size={20} />
-          Назад к списку
-        </Link>
+        <Breadcrumbs items={breadcrumbItems} />
 
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -173,6 +185,53 @@ const Compare = () => {
             Вернуться к каталогу
           </Link>
         </div>
+
+        <RelatedLinks 
+          links={[
+            {
+              title: "Все адаптеры",
+              description: "Полный каталог eSIM провайдеров для путешествий",
+              url: "/",
+              icon: "Grid3x3",
+              gradient: "from-blue-500 to-cyan-500"
+            },
+            {
+              title: "Премиум адаптеры",
+              description: "Сравнение лучших премиум решений",
+              url: "/compare/premium",
+              icon: "Crown",
+              gradient: "from-purple-500 to-pink-500"
+            },
+            {
+              title: "Бюджетные",
+              description: "Доступные варианты для экономии",
+              url: "/compare/budget",
+              icon: "DollarSign",
+              gradient: "from-green-500 to-emerald-500"
+            },
+            {
+              title: "Для бизнеса",
+              description: "Корпоративные решения с API",
+              url: "/compare/business",
+              icon: "Briefcase",
+              gradient: "from-orange-500 to-red-500"
+            },
+            {
+              title: "Популярные",
+              description: "Топ выбор путешественников",
+              url: "/compare/popular",
+              icon: "TrendingUp",
+              gradient: "from-teal-500 to-blue-500"
+            },
+            {
+              title: "Switch eSIM",
+              description: "Лидер рынка с 190+ странами",
+              url: "/adapter/switch-esim",
+              icon: "Wifi",
+              gradient: "from-blue-500 to-cyan-500"
+            }
+          ]}
+        />
       </div>
     </div>
   );

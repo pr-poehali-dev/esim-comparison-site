@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import SEO from "@/components/SEO";
+import BreadcrumbsLight from "@/components/BreadcrumbsLight";
+import RelatedLinks from "@/components/RelatedLinks";
 import { ReactNode } from "react";
 
 interface AdapterLayoutProps {
@@ -70,10 +72,13 @@ const AdapterLayout = ({
       <section className={`py-16 bg-gradient-to-br ${gradient} text-white relative overflow-hidden`}>
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]"></div>
         <div className="container mx-auto px-4 relative">
-          <Link to="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
-            <Icon name="ArrowLeft" size={16} />
-            <span className="text-sm">Назад к списку</span>
-          </Link>
+          <div className="mb-6">
+            <BreadcrumbsLight 
+              items={[
+                { name: shortName, url: `/adapter/${slug}` }
+              ]}
+            />
+          </div>
           
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
@@ -218,19 +223,47 @@ const AdapterLayout = ({
 
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Сравните {shortName} с другими
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Посмотрите детальное сравнение с конкурентами
-            </p>
-            <Link to="/compare">
-              <Button size="lg" className="gradient-primary text-white border-0">
-                <Icon name="ArrowLeftRight" className="mr-2" size={20} />
-                Перейти к сравнению
-              </Button>
-            </Link>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                Сравните {shortName} с другими
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Посмотрите детальное сравнение с конкурентами
+              </p>
+              <Link to="/compare">
+                <Button size="lg" className="gradient-primary text-white border-0">
+                  <Icon name="ArrowLeftRight" className="mr-2" size={20} />
+                  Перейти к сравнению
+                </Button>
+              </Link>
+            </div>
+            
+            <RelatedLinks 
+              links={[
+                {
+                  title: "Все адаптеры",
+                  description: "Вернуться к полному каталогу eSIM провайдеров",
+                  url: "/",
+                  icon: "Grid3x3",
+                  gradient: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Премиум адаптеры",
+                  description: "Сравнение лучших премиум решений с VIP сервисом",
+                  url: "/compare/premium",
+                  icon: "Crown",
+                  gradient: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Бюджетные варианты",
+                  description: "Доступные решения для экономных путешественников",
+                  url: "/compare/budget",
+                  icon: "DollarSign",
+                  gradient: "from-green-500 to-emerald-500"
+                }
+              ]}
+            />
           </div>
         </div>
       </section>
