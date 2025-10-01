@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import SEO from "@/components/SEO";
 import { ReactNode } from "react";
 
 interface AdapterLayoutProps {
@@ -35,8 +36,18 @@ const AdapterLayout = ({
   cons,
   pricing,
 }: AdapterLayoutProps) => {
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const seoTitle = `${name} - обзор, тарифы, отзывы`;
+  const seoDescription = `${description}. Рейтинг ${rating}. ${price}. Покрытие: ${countries}. Поддержка: ${support}. Подробный обзор преимуществ и недостатков.`;
+  
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={`${name.toLowerCase()}, esim ${name.toLowerCase()}, ${name} обзор, ${name} тарифы, ${name} отзывы, esim для путешествий`}
+        canonical={`/adapter/${slug}`}
+      />
       <header className="border-b border-border/50 sticky top-0 bg-background/80 backdrop-blur-xl z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">

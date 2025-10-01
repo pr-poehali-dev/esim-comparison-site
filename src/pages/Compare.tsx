@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { adaptersData } from "@/data/adapters";
 import ComparisonTable from "@/components/ComparisonTable";
+import SEO from "@/components/SEO";
 import Icon from "@/components/ui/icon";
 
 const Compare = () => {
@@ -54,6 +55,11 @@ const Compare = () => {
   if (!comparison) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
+        <SEO 
+          title="Сравнение не найдено"
+          description="Запрошенная страница сравнения не найдена"
+          canonical="/compare"
+        />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Сравнение не найдено</h1>
           <Link to="/" className="text-primary hover:underline">
@@ -64,8 +70,31 @@ const Compare = () => {
     );
   }
 
+  const seoTitles: Record<string, string> = {
+    "premium": "Сравнение премиум eSIM адаптеров - Switch eSIM vs 5ber",
+    "budget": "Сравнение бюджетных eSIM - 9eSIM vs eSIM.me",
+    "business": "eSIM для бизнеса - сравнение Unisimka и Switch eSIM",
+    "popular": "Топ-3 популярных eSIM адаптера 2025"
+  };
+
+  const seoDescriptions: Record<string, string> = {
+    "premium": "Детальное сравнение премиум провайдеров eSIM: Switch eSIM и 5ber. Покрытие 190+ и 100+ стран, круглосуточная VIP поддержка, высокие скорости.",
+    "budget": "Сравнение доступных eSIM: 9eSIM от $3.50 и eSIM.me от $4.00. Честные цены, без скрытых платежей, покрытие 150+ и 170+ стран.",
+    "business": "Корпоративные решения eSIM: Unisimka с API интеграцией и Switch eSIM с широким покрытием. Идеально для бизнеса и команд.",
+    "popular": "Топ-3 самых популярных eSIM адаптера среди путешественников 2025: Switch eSIM, eSIM.me, 5ber. Сравнение характеристик и цен."
+  };
+
+  const seoTitle = slug && seoTitles[slug] ? seoTitles[slug] : comparison.title;
+  const seoDescription = slug && seoDescriptions[slug] ? seoDescriptions[slug] : comparison.description;
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords="сравнение esim, лучшие esim, esim для путешествий, премиум esim, бюджетный esim, esim для бизнеса"
+        canonical={slug ? `/compare/${slug}` : "/compare"}
+      />
       <div className="container mx-auto px-4 py-12">
         <Link 
           to="/"

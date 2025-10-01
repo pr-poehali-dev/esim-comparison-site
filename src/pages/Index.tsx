@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -98,6 +99,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO 
+        title="Сравнение лучших eSIM адаптеров 2025"
+        description="Подробное сравнение 6 популярных провайдеров eSIM для путешествий: Switch eSIM, Unisimka, 9eSIM, 5ber, eSIM.me, xeSIM. Выберите идеальный вариант для вашей поездки."
+        keywords="esim, есим, esim адаптер, мобильный интернет за границей, esim для путешествий, switch esim, unisimka, 9esim, 5ber, esim.me, xesim, сравнение esim"
+        canonical="/"
+      />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-50 via-background to-background"></div>
       
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[120px]"></div>
