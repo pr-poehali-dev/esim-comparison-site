@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Adapter {
   id: string;
@@ -144,10 +145,12 @@ const Index = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center mb-16">
-              <Button size="lg" className="gradient-primary text-white border-0 shadow-lg shadow-teal-500/30 hover:shadow-teal-600/50 transition-all">
-                <Icon name="Compass" className="mr-2" size={20} />
-                Сравнить все
-              </Button>
+              <Link to="/compare">
+                <Button size="lg" className="gradient-primary text-white border-0 shadow-lg shadow-teal-500/30 hover:shadow-teal-600/50 transition-all">
+                  <Icon name="Compass" className="mr-2" size={20} />
+                  Сравнить все
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="border-border/50 hover:bg-muted/50">
                 Читать руководство
               </Button>
@@ -263,15 +266,17 @@ const Index = () => {
                       </ul>
                     </div>
 
-                    <Button
-                      className={`w-full mt-4 bg-gradient-to-r ${adapter.color} text-white border-0 shadow-lg hover:shadow-xl transition-all`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                      }}
-                    >
-                      Подробнее
-                      <Icon name="ArrowRight" className="ml-2" size={16} />
-                    </Button>
+                    <Link to={`/${adapter.id}`} className="block">
+                      <Button
+                        className={`w-full mt-4 bg-gradient-to-r ${adapter.color} text-white border-0 shadow-lg hover:shadow-xl transition-all`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                        }}
+                      >
+                        Подробнее
+                        <Icon name="ArrowRight" className="ml-2" size={16} />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
