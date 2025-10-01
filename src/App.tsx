@@ -23,12 +23,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/switch-esim" element={<SwitchEsim />} />
-          <Route path="/unisimka" element={<Unisimka />} />
-          <Route path="/9esim" element={<NineEsim />} />
-          <Route path="/5ber" element={<Fiveber />} />
-          <Route path="/esim-me" element={<EsimMe />} />
-          <Route path="/xesim" element={<Xesim />} />
+          <Route path="/adapter/switch-esim" element={<SwitchEsim />} />
+          <Route path="/adapter/unisimka" element={<Unisimka />} />
+          <Route path="/adapter/nine-esim" element={<NineEsim />} />
+          <Route path="/adapter/fiveber" element={<Fiveber />} />
+          <Route path="/adapter/esim-me" element={<EsimMe />} />
+          <Route path="/adapter/xesim" element={<Xesim />} />
           <Route path="/compare" element={<Compare />} />
           <Route path="/compare/:slug" element={<Compare />} />
           <Route path="*" element={<NotFound />} />

@@ -151,9 +151,12 @@ const Index = () => {
                   Сравнить все
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-border/50 hover:bg-muted/50">
-                Читать руководство
-              </Button>
+              <Link to="/compare/premium">
+                <Button size="lg" variant="outline" className="border-border/50 hover:bg-muted/50">
+                  <Icon name="Crown" className="mr-2" size={20} />
+                  Премиум адаптеры
+                </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
@@ -266,7 +269,7 @@ const Index = () => {
                       </ul>
                     </div>
 
-                    <Link to={`/${adapter.id}`} className="block">
+                    <Link to={`/adapter/${adapter.id}`} className="block">
                       <Button
                         className={`w-full mt-4 bg-gradient-to-r ${adapter.color} text-white border-0 shadow-lg hover:shadow-xl transition-all`}
                         onClick={(e) => {
@@ -299,24 +302,26 @@ const Index = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { title: "Switch eSIM vs Unisimka", desc: "Сравнение премиум сегмента", gradient: "from-purple-500 to-pink-500" },
-                { title: "9eSIM vs eSIM.me", desc: "Лучшее соотношение цена/качество", gradient: "from-blue-500 to-cyan-500" },
-                { title: "5ber vs xeSIM", desc: "Технологии и инновации", gradient: "from-orange-500 to-red-500" },
-                { title: "Топ-3 для путешествий", desc: "Лучший выбор туристов 2025", gradient: "from-green-500 to-emerald-500" }
+                { title: "Премиум адаптеры", desc: "Сравнение лучших премиум решений", gradient: "from-blue-500 to-cyan-500", slug: "premium" },
+                { title: "Бюджетные варианты", desc: "Доступные решения для экономных", gradient: "from-green-500 to-emerald-500", slug: "budget" },
+                { title: "Для бизнеса", desc: "Корпоративные решения и API", gradient: "from-purple-500 to-pink-500", slug: "business" },
+                { title: "Самые популярные", desc: "Топ выбор путешественников 2025", gradient: "from-orange-500 to-red-500", slug: "popular" }
               ].map((article, idx) => (
-                <Card key={idx} className="group gradient-card border-2 border-border/50 hover:border-teal-600/50 transition-all cursor-pointer overflow-hidden">
-                  <div className={`h-2 bg-gradient-to-r ${article.gradient}`}></div>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-display">{article.title}</CardTitle>
-                    <CardDescription className="text-muted-foreground">{article.desc}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full border-border/50 hover:bg-muted/50 group-hover:border-teal-600/50 transition-all">
-                      Читать статью
-                      <Icon name="ArrowRight" className="ml-2" size={16} />
-                    </Button>
-                  </CardContent>
-                </Card>
+                <Link key={idx} to={`/compare/${article.slug}`}>
+                  <Card className="group gradient-card border-2 border-border/50 hover:border-teal-600/50 transition-all cursor-pointer overflow-hidden">
+                    <div className={`h-2 bg-gradient-to-r ${article.gradient}`}></div>
+                    <CardHeader>
+                      <CardTitle className="text-xl font-display">{article.title}</CardTitle>
+                      <CardDescription className="text-muted-foreground">{article.desc}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button variant="outline" className="w-full border-border/50 hover:bg-muted/50 group-hover:border-teal-600/50 transition-all">
+                        Посмотреть сравнение
+                        <Icon name="ArrowRight" className="ml-2" size={16} />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
