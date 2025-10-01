@@ -132,9 +132,19 @@ const AdapterLayout = ({
               <div className="space-y-8 text-muted-foreground">
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">Что такое {shortName}</h3>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed mb-6">
                     [Здесь будет текст о том, что представляет собой {shortName}, его история, позиционирование на рынке]
                   </p>
+                  
+                  {/* Плейсхолдер для изображения 1 */}
+                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
+                    <div className="aspect-video flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <Icon name="Image" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
+                        <p className="text-sm text-muted-foreground">Место для изображения: интерфейс приложения {shortName}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
@@ -153,13 +163,34 @@ const AdapterLayout = ({
 
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">Тарифы и цены {shortName}</h3>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed mb-6">
                     [Здесь будет подробный разбор тарифных планов, сравнение цен с конкурентами]
                   </p>
+                  
+                  {/* Плейсхолдер для изображения 2 */}
+                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
+                    <div className="aspect-[4/3] flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <Icon name="DollarSign" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
+                        <p className="text-sm text-muted-foreground">Место для изображения: сравнение тарифных планов</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">Покрытие и качество связи</h3>
+                  
+                  {/* Плейсхолдер для изображения 3 - перед текстом */}
+                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
+                    <div className="aspect-video flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <Icon name="Globe" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
+                        <p className="text-sm text-muted-foreground">Место для изображения: карта покрытия {shortName}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <p className="leading-relaxed">
                     [Здесь будет информация о географии покрытия, партнёрских операторах, качестве связи]
                   </p>
@@ -174,9 +205,19 @@ const AdapterLayout = ({
 
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">Наш вердикт</h3>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed mb-6">
                     [Здесь будет итоговая оценка сервиса, рекомендации по использованию]
                   </p>
+                  
+                  {/* Плейсхолдер для изображения 4 */}
+                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
+                    <div className="aspect-[21/9] flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <Icon name="Award" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
+                        <p className="text-sm text-muted-foreground">Место для изображения: итоговая оценка и рекомендации</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </article>
