@@ -1,80 +1,84 @@
 import AdapterLayout from "@/components/AdapterLayout";
+import NineEsimReview from "@/components/reviews/NineEsimReview";
 
 const NineEsim = () => {
   return (
     <AdapterLayout
       name="9eSIM"
       shortName="9eSIM"
-      description="Доступное решение для путешествий по всему миру без скрытых платежей"
-      rating={4.5}
-      price="от $3.50"
-      countries="150+"
-      support="Email"
-      gradient="from-green-500 to-emerald-500"
+      description="Физический eSIM-адаптер от британской SIMLINK Ltd. для добавления eSIM на любые устройства"
+      rating={4.8}
+      price="от $15"
+      countries="Любые"
+      support="Email / Telegram"
+      gradient="from-blue-500 to-cyan-500"
       features={[
         {
-          title: "Низкие цены",
-          description: "Одни из самых доступных тарифов на рынке eSIM",
+          title: "Универсальность",
+          description: "Работает на Android, iPhone, планшетах, роутерах и любых устройствах с SIM-слотом",
+          icon: "Smartphone"
+        },
+        {
+          title: "До 50 профилей",
+          description: "Версия V3 хранит до 50 eSIM-профилей с памятью 1.5 МБ",
+          icon: "Layers"
+        },
+        {
+          title: "Без ограничений",
+          description: "Неограниченное число загрузок и перезаписей профилей без доплат",
+          icon: "Infinity"
+        },
+        {
+          title: "Open-source",
+          description: "Открытая экосистема, поддержка множества приложений",
+          icon: "Code"
+        },
+        {
+          title: "STK-меню",
+          description: "V0 и V3 поддерживают переключение профилей через SIM Toolkit на iPhone",
+          icon: "Menu"
+        },
+        {
+          title: "Единоразовая оплата",
+          description: "Нет абонплаты и подписок – купили один раз и пользуйтесь",
           icon: "DollarSign"
-        },
-        {
-          title: "Простая активация",
-          description: "Интуитивный процесс подключения без сложных настроек",
-          icon: "Settings"
-        },
-        {
-          title: "Без доп. платежей",
-          description: "Вся стоимость указана сразу — никаких скрытых комиссий",
-          icon: "CheckCircle"
-        },
-        {
-          title: "150+ стран",
-          description: "Покрытие во всех популярных туристических направлениях",
-          icon: "Globe"
-        },
-        {
-          title: "Гибкие пакеты",
-          description: "Выбирайте объем данных и срок действия под свои нужды",
-          icon: "Package"
-        },
-        {
-          title: "Пополнение счета",
-          description: "Докупайте трафик прямо в приложении в один клик",
-          icon: "CreditCard"
         }
       ]}
       pros={[
-        "Самые низкие цены среди всех провайдеров",
-        "Простой и понятный интерфейс приложения",
-        "Честные тарифы без скрытых платежей",
-        "Быстрое пополнение баланса",
-        "Подходит для бюджетных путешественников"
+        "Добавляет eSIM на устройства без встроенной поддержки",
+        "До 50 профилей одновременно (V3)",
+        "Полная совместимость с Pixel, Motorola, OnePlus, Xiaomi",
+        "Поддержка iPhone через STK-меню (V0/V3)",
+        "Открытая платформа без лицензионных ограничений"
       ]}
       cons={[
-        "Поддержка только по email, нет онлайн-чата",
-        "Меньше стран по сравнению с премиум-сервисами",
-        "Иногда более низкая скорость соединения"
+        "Проблемы с Samsung Galaxy (высокий риск сбоев)",
+        "Требуется техническая грамотность для настройки",
+        "Одновременно активен только один профиль (нет MEP)",
+        "На iPhone загрузка профилей только через Android/ПК",
+        "Переключение профилей занимает 10-30 секунд"
       ]}
       pricing={[
         {
-          name: "Эконом",
-          price: "$3.50",
-          data: "1 ГБ",
-          validity: "7 дней"
+          name: "V0 Budget",
+          price: "$15",
+          data: "До 15 профилей",
+          validity: "STK-меню"
         },
         {
-          name: "Оптимал",
-          price: "$9",
-          data: "3 ГБ",
-          validity: "30 дней"
+          name: "V2 Android",
+          price: "$20",
+          data: "До 50 профилей",
+          validity: "Без STK"
         },
         {
-          name: "Максимум",
-          price: "$25",
-          data: "10 ГБ",
-          validity: "30 дней"
+          name: "V3 Premium",
+          price: "$24",
+          data: "До 50 профилей",
+          validity: "STK-меню"
         }
       ]}
+      detailedReview={<NineEsimReview />}
     />
   );
 };
