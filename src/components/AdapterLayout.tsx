@@ -130,110 +130,15 @@ const AdapterLayout = ({
         </div>
       </section>
 
-      {/* Заготовка под статью-обзор */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <article className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-                Обзор {shortName}: подробный гайд для путешественников
-              </h2>
-              
-              <div className="space-y-8 text-muted-foreground">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Что такое {shortName}</h3>
-                  <p className="leading-relaxed mb-6">
-                    [Здесь будет текст о том, что представляет собой {shortName}, его история, позиционирование на рынке]
-                  </p>
-                  
-                  {/* Плейсхолдер для изображения 1 */}
-                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
-                    <div className="aspect-video flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <Icon name="Image" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground">Место для изображения: интерфейс приложения {shortName}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Как работает {shortName}</h3>
-                  <p className="leading-relaxed">
-                    [Здесь будет описание принципа работы сервиса, процесса покупки и активации eSIM]
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Кому подойдёт {shortName}</h3>
-                  <p className="leading-relaxed">
-                    [Здесь будет описание целевой аудитории: кому больше всего подходит этот сервис]
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Тарифы и цены {shortName}</h3>
-                  <p className="leading-relaxed mb-6">
-                    [Здесь будет подробный разбор тарифных планов, сравнение цен с конкурентами]
-                  </p>
-                  
-                  {/* Плейсхолдер для изображения 2 */}
-                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
-                    <div className="aspect-[4/3] flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <Icon name="DollarSign" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground">Место для изображения: сравнение тарифных планов</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Покрытие и качество связи</h3>
-                  
-                  {/* Плейсхолдер для изображения 3 - перед текстом */}
-                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
-                    <div className="aspect-video flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <Icon name="Globe" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground">Место для изображения: карта покрытия {shortName}</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="leading-relaxed">
-                    [Здесь будет информация о географии покрытия, партнёрских операторах, качестве связи]
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Поддержка клиентов</h3>
-                  <p className="leading-relaxed">
-                    [Здесь будет описание службы поддержки, каналов связи, времени ответа]
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Наш вердикт</h3>
-                  <p className="leading-relaxed mb-6">
-                    [Здесь будет итоговая оценка сервиса, рекомендации по использованию]
-                  </p>
-                  
-                  {/* Плейсхолдер для изображения 4 */}
-                  <div className="my-8 rounded-xl overflow-hidden border-2 border-border/50 bg-muted/30">
-                    <div className="aspect-[21/9] flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <Icon name="Award" size={48} className="mx-auto mb-4 text-muted-foreground/50" />
-                        <p className="text-sm text-muted-foreground">Место для изображения: итоговая оценка и рекомендации</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
+      {detailedReview && (
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              {detailedReview}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -335,16 +240,6 @@ const AdapterLayout = ({
           </div>
         </div>
       </section>
-
-      {detailedReview && (
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg prose-slate dark:prose-invert">
-              {detailedReview}
-            </div>
-          </div>
-        </section>
-      )}
 
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
