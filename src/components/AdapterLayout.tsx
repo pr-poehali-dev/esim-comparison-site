@@ -22,6 +22,7 @@ interface AdapterLayoutProps {
   cons: string[];
   pricing: { name: string; price: string; data: string; validity: string }[];
   children?: ReactNode;
+  detailedReview?: ReactNode;
 }
 
 const AdapterLayout = ({
@@ -37,6 +38,7 @@ const AdapterLayout = ({
   pros,
   cons,
   pricing,
+  detailedReview,
 }: AdapterLayoutProps) => {
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const seoTitle = `${name} - обзор, тарифы, отзывы`;
@@ -333,6 +335,16 @@ const AdapterLayout = ({
           </div>
         </div>
       </section>
+
+      {detailedReview && (
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto prose prose-lg prose-slate dark:prose-invert">
+              {detailedReview}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">

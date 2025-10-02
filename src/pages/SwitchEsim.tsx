@@ -1,4 +1,5 @@
 import AdapterLayout from "@/components/AdapterLayout";
+import SwitchEsimReview from "@/components/reviews/SwitchEsimReview";
 
 const SwitchEsim = () => {
   return (
@@ -75,6 +76,7 @@ const SwitchEsim = () => {
           validity: "30 дней"
         }
       ]}
+      detailedReview={<SwitchEsimReview />}
     />
   );
 };
