@@ -1,80 +1,84 @@
 import AdapterLayout from "@/components/AdapterLayout";
+import EsimMeReview from "@/components/reviews/EsimMeReview";
 
 const EsimMe = () => {
   return (
     <AdapterLayout
       name="eSIM.me"
       shortName="eSIM.me"
-      description="Надежный провайдер с отличной репутацией и cashback программой"
-      rating={4.6}
-      price="от $4.00"
-      countries="170+"
-      support="24/7"
+      description="Физический eSIM-адаптер от немецкой компании TelcoVillage GmbH для добавления eSIM в любые устройства"
+      rating={2.4}
+      price="от $25"
+      countries="Любые"
+      support="Email (медленная)"
       gradient="from-indigo-500 to-purple-500"
       features={[
         {
-          title: "Мгновенная активация",
-          description: "eSIM приходит мгновенно после оплаты и готова к использованию",
-          icon: "Zap"
-        },
-        {
-          title: "Удобное приложение",
-          description: "Интуитивное мобильное приложение с простым управлением",
+          title: "Для любых устройств",
+          description: "Добавляет eSIM на Android, iPhone и любые устройства с SIM-слотом",
           icon: "Smartphone"
         },
         {
-          title: "Cashback программа",
-          description: "Возвращайте до 10% от каждой покупки на баланс",
-          icon: "Gift"
+          title: "До 15 профилей",
+          description: "Хранение до 15 eSIM-профилей в версии Pro (Omni)",
+          icon: "Layers"
         },
         {
-          title: "170+ стран",
-          description: "Широкое покрытие по всему миру включая редкие направления",
-          icon: "Globe"
+          title: "Единоразовая оплата",
+          description: "Нет абонплаты – покупаете карту один раз и пользуетесь",
+          icon: "DollarSign"
         },
         {
-          title: "Реферальная система",
-          description: "Получайте бонусы за приглашение друзей",
-          icon: "Users"
+          title: "Лицензии",
+          description: "Basic, Advanced, Pro, Business – выбор под ваши нужды",
+          icon: "Key"
         },
         {
-          title: "Поддержка 24/7",
-          description: "Круглосуточная помощь в чате и по телефону",
-          icon: "MessageCircle"
+          title: "14 дней гарантии",
+          description: "Возврат денег если карта не подошла или не работает",
+          icon: "Shield"
+        },
+        {
+          title: "Версия V2",
+          description: "Новые карты с улучшенной памятью и совместимостью",
+          icon: "Zap"
         }
       ]}
       pros={[
-        "Отличная cashback программа возвращает деньги",
-        "Удобное и красивое приложение",
-        "Быстрая активация eSIM",
-        "Широкое покрытие в 170+ странах",
-        "Регулярные акции и скидки"
+        "Добавляет eSIM на устройства без встроенной поддержки",
+        "Универсальность – можно переставлять между устройствами",
+        "Хранит до 15-30 профилей одновременно",
+        "Нет абонплаты и подписок",
+        "Первое решение на рынке (ноябрь 2021)"
       ]}
       cons={[
-        "Cashback начисляется с задержкой",
-        "Не все страны доступны на всех тарифах",
-        "Интерфейс приложения только на английском"
+        "Зависимость от Android-приложения для управления",
+        "Лицензии Single/Multi ограничивают использование",
+        "Очень слабая техподдержка (рейтинг 2.4/5)",
+        "Глюки и сбои в работе по отзывам",
+        "Высокая цена ($25-130 за разные версии)"
       ]}
       pricing={[
         {
-          name: "Базовый",
-          price: "$4",
-          data: "1 ГБ",
-          validity: "7 дней"
+          name: "Basic",
+          price: "$25-30",
+          data: "2-5 профилей",
+          validity: "1 устройство"
         },
         {
-          name: "Плюс",
-          price: "$13",
-          data: "5 ГБ",
-          validity: "30 дней"
+          name: "Advanced",
+          price: "$40-50",
+          data: "5-10 профилей",
+          validity: "1 бренд"
         },
         {
-          name: "Макс",
-          price: "$32",
-          data: "15 ГБ",
-          validity: "30 дней"
+          name: "Pro",
+          price: "$70",
+          data: "15 профилей",
+          validity: "Без ограничений"
         }
       ]}
+      detailedReview={<EsimMeReview />}
     />
   );
 };
