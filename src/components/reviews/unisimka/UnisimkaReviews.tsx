@@ -83,9 +83,9 @@ const UnisimkaReviews = () => {
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </div>
+          </CardContent>
         </Card>
 
         <Card className="border-2 border-blue-500/30 bg-blue-500/5">
@@ -121,9 +121,9 @@ const UnisimkaReviews = () => {
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </div>
+          </CardContent>
         </Card>
 
         <Card className="border-2 border-purple-500/30 bg-purple-500/5">
@@ -159,9 +159,9 @@ const UnisimkaReviews = () => {
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </div>
+          </CardContent>
         </Card>
       </div>
 
