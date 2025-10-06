@@ -217,10 +217,10 @@ const Index = () => {
             {adapters.map((adapter) => (
               <Card
                 key={adapter.id}
-                className={`group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer gradient-card ${
+                className={`relative overflow-hidden border-2 transition-all duration-300 cursor-pointer gradient-card ${
                   selectedAdapter === adapter.id 
                     ? 'border-teal-600 shadow-lg shadow-teal-500/20' 
-                    : 'border-border/50 hover:border-teal-600/50 hover:shadow-lg hover:shadow-teal-500/10'
+                    : 'border-border/50'
                 }`}
                 onClick={() => setSelectedAdapter(adapter.id)}
               >
@@ -238,8 +238,8 @@ const Index = () => {
                         </CardTitle>
                       </div>
                     </div>
-                    <Badge variant="secondary" className="bg-muted/50 backdrop-blur-sm border border-border/50">
-                      <Icon name="Star" size={14} className="mr-1 text-yellow-500" />
+                    <Badge variant="secondary" className="bg-yellow-50 text-yellow-800 border border-yellow-200">
+                      <Icon name="Star" size={14} className="mr-1 text-yellow-500 fill-yellow-500" />
                       {adapter.rating}
                     </Badge>
                   </div>
