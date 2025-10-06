@@ -51,13 +51,6 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    --switch-esim: 210 100% 20%;
-    --unisimka: 74 43% 52%;
-    --nine-esim: 19 100% 50%;
-    --fiveber: 174 100% 33%;
-    --esim-me: 48 100% 50%;
-    --xesim: 270 100% 25%;
   }
 
   .dark {
@@ -96,13 +89,6 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    --switch-esim: 210 100% 30%;
-    --unisimka: 74 43% 60%;
-    --nine-esim: 19 100% 60%;
-    --fiveber: 174 100% 43%;
-    --esim-me: 48 100% 60%;
-    --xesim: 270 100% 35%;
   }
 }
 

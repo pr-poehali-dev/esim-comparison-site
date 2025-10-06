@@ -22,7 +22,7 @@ export const adaptersData: Adapter[] = [
     price: "от $5.00",
     countries: "190+",
     support: "24/7",
-    gradient: "from-[#003366] to-[#004488]",
+    gradient: "from-blue-500 to-cyan-500",
     description: "Лидер рынка с максимальным покрытием и премиум поддержкой",
     features: [
       "Покрытие в 190+ странах",
@@ -53,7 +53,7 @@ export const adaptersData: Adapter[] = [
     price: "от $4.00",
     countries: "120+",
     support: "Email",
-    gradient: "from-[#A4C639] to-[#8AB028]",
+    gradient: "from-purple-500 to-pink-500",
     description: "Идеальное решение для бизнеса с API интеграцией",
     features: [
       "API для разработчиков",
@@ -84,7 +84,7 @@ export const adaptersData: Adapter[] = [
     price: "от $3.50",
     countries: "150+",
     support: "Email",
-    gradient: "from-[#FF6600] to-[#FF8833]",
+    gradient: "from-green-500 to-emerald-500",
     description: "Доступное решение для путешествий по всему миру",
     features: [
       "Низкие цены",
@@ -115,7 +115,7 @@ export const adaptersData: Adapter[] = [
     price: "от $6.00",
     countries: "100+",
     support: "24/7",
-    gradient: "from-[#00BFA5] to-[#00D4B8]",
+    gradient: "from-orange-500 to-red-500",
     description: "Премиум качество связи с VIP поддержкой",
     features: [
       "VIP поддержка",
@@ -146,7 +146,7 @@ export const adaptersData: Adapter[] = [
     price: "от $4.00",
     countries: "170+",
     support: "24/7",
-    gradient: "from-[#FFCC00] to-[#FFD633]",
+    gradient: "from-indigo-500 to-purple-500",
     description: "Надежный провайдер с cashback программой",
     features: [
       "Мгновенная активация",
@@ -177,7 +177,7 @@ export const adaptersData: Adapter[] = [
     price: "от $4.50",
     countries: "160+",
     support: "Email + Chat",
-    gradient: "from-[#800080] to-[#9933CC]",
+    gradient: "from-teal-500 to-blue-500",
     description: "Инновационные технологии с умными тарифами",
     features: [
       "Гибридный формат",
