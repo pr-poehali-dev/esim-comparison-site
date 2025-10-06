@@ -164,12 +164,6 @@ const Index = () => {
                   Сравнить все
                 </Button>
               </Link>
-              <Link to="/compare/premium">
-                <Button size="lg" variant="outline" className="border-border/50 hover:bg-muted/50">
-                  <Icon name="Crown" className="mr-2" size={20} />
-                  Премиум адаптеры
-                </Button>
-              </Link>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
